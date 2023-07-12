@@ -106,4 +106,10 @@ struct SearchScopesModifier<R: RootRegistry>: ViewModifier, Decodable {
         case scopes
     }
 }
+#else
+struct SearchScopesModifier: ViewModifier, Decodable {
+    func body(content: Content) -> some View {
+        content
+    }
+}
 #endif
